@@ -20,34 +20,34 @@ import Login from "./pages/Login.jsx";
 import SignUp from "./pages/SignUp.jsx";
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      { path: '/', element: <Home /> },
-      { path: '/login', element: <Login /> },
-      { path: '/signup', element: <SignUp /> },
-      { path: '/cart', element: <Cart /> },
-      { path: '/wishlist', element: <WishList /> },
-      { path: '/shoes/men', element: <Men /> },
-      { path: '/shoes/women', element: <Women /> },
-      { path: '/shoes/kids', element: <Kids /> },
-      { path: '/product-details/:id', element: <ProductDetails /> },
-      { path: '/search/:search', element: <SearchResults /> },
-
-    ]
-  },
+    {
+        path: "/",
+        element: <App />,
+        children: [
+            { path: "/", element: <Home /> },
+            { path: "/about-us", element: <About /> },
+            { path: "/login", element: <Login /> },
+            { path: "/signup", element: <SignUp /> },
+            { path: "/cart", element: <Cart /> },
+            { path: "/wishlist", element: <WishList /> },
+            { path: "/shoes/men", element: <Men /> },
+            { path: "/shoes/women", element: <Women /> },
+            { path: "/shoes/kids", element: <Kids /> },
+            { path: "/product-details/:id", element: <ProductDetails /> },
+            { path: "/search/:search", element: <SearchResults /> },
+        ],
+    },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <WishListProvider>
-      <CartProvider>
-        <RouterProvider router={router}>
-          <App />
-        </RouterProvider>
-        <ToastContainer />
-      </CartProvider>
-    </WishListProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+        <WishListProvider>
+            <CartProvider>
+                <RouterProvider router={router}>
+                    <App />
+                </RouterProvider>
+                <ToastContainer />
+            </CartProvider>
+        </WishListProvider>
+    </React.StrictMode>,
 );

@@ -35,4 +35,8 @@ const startServer = async () => {
     process.exit(1);
   }
 };
+
+//add the routes
+app.use('/api', router);
+
 startServer();
